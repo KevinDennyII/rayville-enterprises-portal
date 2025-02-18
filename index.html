@@ -18,8 +18,14 @@
       background-position: center;
       background-repeat: no-repeat;
     }
+    .main{
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
     .header {
-      background-color: #f9f9f9; /* Light near-white background */
+      background-color: rgba(255, 255, 255, 0.32);
       padding: 1rem;
       text-align: center;
       color: #002855; /* Dark blue text */
@@ -82,6 +88,19 @@
       font-size: 0.9rem;
       display: block;
     }
+    .footer {
+      align-content: space-evenly;
+      text-align: center;
+      margin: 1rem auto;
+      background-color: rgba(255, 255, 255, 0.82);
+    }
+    .credit {
+      margin: 1rem;
+      text-align: center;
+    }
+    .copyright {
+      margin-bottom: 1rem;
+    }
     @media (max-width: 600px) {
       .title {
         font-size: 1.5rem;
@@ -105,6 +124,7 @@
   </style>
 </head>
 <body>
+<div class="main">
 <div class="header">
   <img
     src="images/RayvillePM-Logo_FullColor-01-1.png"
@@ -129,6 +149,18 @@
     </a>
   </div>
 </div>
+<div class="footer">
+  <div class="credit">
+    Rayville Enterprises, Inc. is committed to ensuring compliance with the Americans with Disabilities Act,
+    including incorporating the Web Content Accessibility Guidelines (WCAG) 2.1 (https://www.w3.org/TR/WCAG21/)
+    and applying Level A Success Criteria and Conformance Requirements.
+  </div>
+  <div class="copyright">
+    Rayville Enterprises, Inc &#169; 2025 All Rights Reserved.
+  </div>
+</div>
+</div>
+
 </body>
 </html>
 
