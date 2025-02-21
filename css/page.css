@@ -27,16 +27,6 @@ body {
   font-size: 1.8rem;
   margin: 0;
 }
-.container {
-  text-align: center;
-  /*background: #fff;*/
-  /*background-color: rgba(255, 0, 0, 0.5);*/
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin: 2rem auto;
-  max-width: 800px;
-}
 .title {
   font-family: "Style Script", serif;
   font-weight: 400;
@@ -57,7 +47,7 @@ body {
   color: #333;
   text-align: center;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.32);
+  background-color: rgba(255, 255, 255, 0.72);
   padding: 0 1rem;
   width: 125px;
   height: 125px;
@@ -89,12 +79,58 @@ body {
   background-color: rgba(255, 255, 255, 0.82);
 }
 .credit {
-  margin: 1rem;
+  margin: 0 15rem;
   text-align: center;
 }
 .copyright {
   margin-bottom: 1rem;
 }
+
+.entity {
+  border-left: 1px dashed rgba(0, 0, 0, 0.5);
+}
+
+.rayville-entities .container {
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.82);
+}
+
+.rayville-entities h2 {
+  font-family: "Style Script", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px #558ABB;
+}
+
+.rayville-entities .entity {
+  display: inline-block;
+  width: 22%;
+  margin: 1%;
+  vertical-align: top;
+}
+
+.rayville-entities .entity img {
+  max-width: 200px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.rayville-entities .entity h3 {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.rayville-entities .entity p {
+  font-size: .9em;
+  color: #555;
+}
+
 @media (max-width: 600px) {
   .title {
     font-size: 1.5rem;
