@@ -79,11 +79,11 @@ body {
   background-color: rgba(255, 255, 255, 0.82);
 }
 .credit {
-  margin: 0 15rem;
+  margin: .5rem 15rem;
   text-align: center;
 }
 .copyright {
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .entity {
@@ -100,10 +100,11 @@ body {
 }
 
 .rayville-entities h2 {
-  font-family: "Style Script", serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  padding-top: 1rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
   text-shadow: 1px 1px #558ABB;
 }
