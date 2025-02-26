@@ -89,11 +89,11 @@ body {
   background-color: rgba(255, 255, 255, 0.82);
 }
 .credit {
-  margin: 1rem;
+  margin: .5rem 15rem;
   text-align: center;
 }
 .copyright {
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 
