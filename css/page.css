@@ -1,14 +1,16 @@
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0;
   font-family: Arial, sans-serif;
   color: #333;
   background-image: url('../images/monument_east_baltimore_maryland.jpg');
-  background-size: cover;
-  background-position: center;
+  background-size: 100vw 100vh;
   background-repeat: no-repeat;
 }
 .main{
-  width: 100vw;
+  flex-grow: 1; /* the helps to stick the footer to the bottom */
 }
 .header {
   background-color: rgba(255, 255, 255, 0.32);
@@ -70,12 +72,13 @@ body {
   margin: 15px;
 }
 .footer {
+  min-height: 50px;
   font-size: .75rem;
   align-content: space-evenly;
   text-align: center;
-  margin: 0.5rem auto;
   padding-bottom: 0.5rem;
   background-color: rgba(255, 255, 255, 0.90);
+  position: relative;
 }
 .developer-credit{
   margin-top: 5px;
