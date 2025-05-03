@@ -19,7 +19,7 @@ body {
   color: #002855; /* Dark blue text */
 }
 .header img {
-  max-width: 200px;
+  max-width: 350px;
   margin-bottom: 0.5rem;
 }
 .header h1 {
@@ -95,7 +95,7 @@ body {
 
 @media (max-width: 600px) {
   body{
-    background-image: url('../images/baltimore_skyline_1.jpg');
+    background-image: url('../images/monument_east_baltimore_maryland.jpg');
     background-size: 500vw 160vh;
   }
   .title {
