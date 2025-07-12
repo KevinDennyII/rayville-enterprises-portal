@@ -1,74 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-  <title>Website Portal</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/page.css">
-</head>
-<body>
-<div class="main">
-<div class="header">
-  <img
-    src="images/logos/_Rayville_Enterprises.png"
-    alt="Rayville Enterprises Logo"
-  />
-  <h1>Welcome to Ray-ville Enterprises!</h1>
-</div>
-<div>
-  <div class="container">
-    <div class="icon-container">
-      <div class="icon">
-<!--        Logo goes here-->
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ray-ville Enterprises Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class'
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        /*font-family: 'Inter', sans-serif;*/
+        /*background-image: url('/images/monument_east_baltimore_maryland.jpg');*/
+        /*background-size: cover;*/
+        /*background-position: center;*/
+        /*background-repeat: no-repeat;*/
+        /*background-attachment: fixed;*/
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #333;
+        background-image: url('/images/monument_east_baltimore_maryland.jpg');
+        background-size: 100vw 100vh;
+        background-repeat: no-repeat;
+      }
+      header {
+        /*background-color: rgba(255, 255, 255, 0.32);*/
+        padding: 1rem;
+        text-align: center;
+        color: #002855; /* Dark blue text */
+      }
+      header img {
+        max-width: 350px;
+        margin-bottom: 0.5rem;
+        display: inline;
+      }
+    </style>
+  </head>
+  <body class="text-gray-800 dark:text-gray-100">
+    <!-- Dark Mode Toggle -->
+    <button onclick="document.documentElement.classList.toggle('dark')" class="fixed top-4 right-4 bg-blue-600 text-white px-4 py-2 rounded-md shadow hover:bg-blue-700 transition z-50">
+      Toggle Dark Mode
+    </button>
 
-        <img src="images/logos/rayvillepm-logo-fullcolor.png" alt="Rayville Property Management website" />
-      </div>
-      <div class="icon-text">
-        Business Description
-      </div>
+    <!-- Overlay for contrast -->
+    <div >
+      <!-- Header -->
+      <header>
+        <img src="images/logos/_Rayville_Enterprises.png"  alt="Rayville Enterprises Logo" />
+      </header>
+
+      <!-- Main Content -->
+      <main class="max-w-7xl mx-auto px-4 pt-8 pb-16 text-center">
+        <h2 class="text-3xl font-semibold mb-4">Welcome to the Rayville Portal</h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-10 max-w-xl mx-auto">
+          Use this portal to access Rayville Enterprises' primary services. Choose one below to continue.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+          <!-- Card 1 -->
+          <a href="#" target="_blank" class="block bg-white/80 dark:bg-gray-800/80 rounded-xl shadow hover:shadow-xl hover:scale-105 hover:bg-blue-100/50 dark:hover:bg-blue-900/40 transition-all duration-300 p-6 text-center">
+            <div class="icon">
+              <img src="/images/logos/_Rayville_Home_Improvement.png" alt="Service 1"  />
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Service One</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300">Brief description of service one.</p>
+          </a>
+
+          <!-- Card 2 -->
+          <a href="#" target="_blank" class="block bg-white/80 dark:bg-gray-800/80 rounded-xl shadow hover:shadow-xl hover:scale-105 hover:bg-blue-100/50 dark:hover:bg-blue-900/40 transition-all duration-300 p-6 text-center">
+            <div class="icon">
+              <img src="/images/logos/_Rayville_Real_Home_Lead_Inspections.png" alt="Service 2"  />
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Service Two</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300">Brief description of service two.</p>
+          </a>
+
+          <!-- Card 3 -->
+          <a href="#" target="_blank" class="block bg-white/80 dark:bg-gray-800/80 rounded-xl shadow hover:shadow-xl hover:scale-105 hover:bg-blue-100/50 dark:hover:bg-blue-900/40 transition-all duration-300 p-6 text-center">
+            <div class="icon">
+              <img src="/images/logos/_Rayville_Home_Improvement.png" alt="Service 3"  />
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Service Three</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300">Brief description of service three.</p>
+          </a>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-gray-100 dark:bg-gray-800 text-sm text-gray-500 dark:text-gray-400 py-6 text-center">
+        <p>© 2025 Rayville Enterprises. All rights reserved.</p>
+      </footer>
     </div>
-    <div class="icon-container">
-      <div class="icon">
-<!--        Logo goes here-->
-        <img src="images/logos/_Rayville_Real_Home_Lead_Inspections.png" alt="Real Lead and Home Inspections website" />
-      </div>
-      <div class="icon-text">
-        Business Description
-      </div>
-    </div>
-    <div class="icon-container">
-      <div class="icon">
-<!--        Logo goes here-->
-        <img src="images/logos/_Rayville_Home_Improvement.png" alt="Rayville Home Improvement website" />
-      </div>
-      <div class="icon-text">
-        Business Description
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-<div class="footer">
-  <div class="developer-credit">
-    Made by
-    <a href="https://www.ohhdennyservices.com" target="_blank" rel="noopener noreferrer">OhhDenny Services, LLC</a>
-    with ❤
-  </div>
-  <div class="credit">
-    Ray-ville Enterprises, LLC. is committed to ensuring compliance with the Americans with Disabilities Act,
-    including incorporating the Web Content Accessibility Guidelines (WCAG) 2.1 (https://www.w3.org/TR/WCAG21/)
-    and applying Level A Success Criteria and Conformance Requirements.
-  </div>
-  <div class="copyright">
-    Ray-ville Enterprises, LLC &#169; 2025 All Rights Reserved.
-  </div>
-</div>
-</body>
+
+    <style>
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.6s ease-out both;
+      }
+    </style>
+  </body>
 </html>
-
