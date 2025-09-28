@@ -137,7 +137,7 @@ main {
   flex: 1;
   
   /* SPACING */
-  padding: 3rem 1rem;
+  padding: 1.5rem 1rem;
   max-width: 1280px;
   margin: 0 auto;
   width: 100%;
@@ -145,7 +145,7 @@ main {
 
 .welcome-title {
   /* SPACING */
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   
   /* COLORS */
   color: #0f172a;
@@ -313,7 +313,7 @@ footer {
   }
   
   main {
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
   }
   
   .business-cards {
@@ -326,7 +326,7 @@ footer {
   }
   
   .welcome-title {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 }
 
