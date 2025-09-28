@@ -104,7 +104,6 @@ header {
   
   /* COLORS */
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
   
   /* EFFECTS */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -112,7 +111,7 @@ header {
 
 header img {
   /* LAYOUT */
-  max-width: 350px;
+  max-width: 450px;
   height: auto;
   
   /* EFFECTS */
