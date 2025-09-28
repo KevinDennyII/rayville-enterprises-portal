@@ -6,6 +6,7 @@
     <title>Ray-ville Enterprises Portal</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
   </head>
   <body>
     <!-- Header -->
@@ -15,7 +16,7 @@
 
     <!-- Main Content -->
     <main>
-      <h1 class="welcome-title animate-fade-in">Welcome to the Ray-ville Portal</h1>
+      <h1 class="welcome-title animate-fade-in" id="welcome-text">Welcome to the Ray-ville Portal</h1>
 
       <div class="business-cards">
         <!-- Card 1: Property Management -->
@@ -46,5 +47,78 @@
       </div>
     </footer>
 
+    <script>
+      // Wait for DOM to load
+      document.addEventListener('DOMContentLoaded', function() {
+        const welcomeText = document.getElementById('welcome-text');
+        const text = welcomeText.textContent;
+        
+        // Split text into individual characters
+        welcomeText.innerHTML = text.split('').map(char => 
+          char === ' ' ? '<span class="char char-space"> </span>' : `<span class="char">${char}</span>`
+        ).join('');
+        
+        // Check if user prefers reduced motion
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
+        if (prefersReducedMotion) {
+          // If user prefers reduced motion, show text immediately without animation
+          const chars = document.querySelectorAll('.char');
+          chars.forEach(char => {
+            char.style.opacity = '1';
+            char.style.transform = 'none';
+          });
+          
+          // Still add hover effects but without animation
+          welcomeText.addEventListener('mouseenter', function() {
+            chars.forEach(char => {
+              char.style.textShadow = '0 0 20px rgba(255, 255, 255, 0.8), 0 2px 8px rgba(0, 0, 0, 0.8)';
+              char.style.transform = 'scale(1.05)';
+            });
+          });
+          
+          welcomeText.addEventListener('mouseleave', function() {
+            chars.forEach(char => {
+              char.style.textShadow = '0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9)';
+              char.style.transform = 'scale(1)';
+            });
+          });
+        } else {
+          // Animate each character with a subtle highlight effect
+          anime({
+            targets: '.char',
+            translateY: [20, 0],
+            opacity: [0, 1],
+            rotateX: [-90, 0],
+            scale: [0.8, 1],
+            easing: 'easeOutElastic(1, .8)',
+            duration: 1200,
+            delay: anime.stagger(60, {start: 300}),
+            complete: function() {
+              // Add a subtle glow effect on hover
+              welcomeText.addEventListener('mouseenter', function() {
+                anime({
+                  targets: '.char',
+                  textShadow: '0 0 20px rgba(255, 255, 255, 0.8), 0 2px 8px rgba(0, 0, 0, 0.8)',
+                  scale: 1.05,
+                  duration: 400,
+                  easing: 'easeOutQuad'
+                });
+              });
+              
+              welcomeText.addEventListener('mouseleave', function() {
+                anime({
+                  targets: '.char',
+                  textShadow: '0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9)',
+                  scale: 1,
+                  duration: 400,
+                  easing: 'easeOutQuad'
+                });
+              });
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
