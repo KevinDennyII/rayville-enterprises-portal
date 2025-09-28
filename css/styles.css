@@ -1,0 +1,401 @@
+/* 
+ * Rayville Enterprises Portal Styles
+ * Following Josh Comeau's CSS methodology: Layout → Spacing → Colors → Typography → Effects
+ */
+
+/* ===================
+   CSS RESET & BASE STYLES
+   =================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* ===================
+   LAYOUT SYSTEM (Grid-based sticky footer)
+   =================== */
+
+body {
+  /* LAYOUT */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  
+  /* SPACING */
+  margin: 0;
+  
+  /* COLORS & BACKGROUND */
+  background-image: url('../images/monument_east_baltimore_maryland.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+  /* TYPOGRAPHY */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  color: #1e293b;
+  
+  /* EFFECTS */
+  scroll-behavior: smooth;
+}
+
+/* Background overlay for better text contrast */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.1) 0%, rgba(51, 65, 85, 0.05) 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ===================
+   HEADER STYLES
+   =================== */
+
+header {
+  /* LAYOUT */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* SPACING */
+  padding: 2rem 1rem;
+  
+  /* COLORS */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  
+  /* EFFECTS */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header img {
+  /* LAYOUT */
+  max-width: 350px;
+  height: auto;
+  
+  /* EFFECTS */
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+
+header img:hover {
+  transform: scale(1.02);
+}
+
+/* ===================
+   MAIN CONTENT AREA
+   =================== */
+
+main {
+  /* LAYOUT */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  
+  /* SPACING */
+  padding: 3rem 1rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.welcome-title {
+  /* SPACING */
+  margin-bottom: 3rem;
+  
+  /* COLORS */
+  color: #0f172a;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+  
+  /* TYPOGRAPHY */
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+/* ===================
+   BUSINESS CARDS GRID
+   =================== */
+
+.business-cards {
+  /* LAYOUT */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  place-items: center;
+  
+  /* SPACING */
+  width: 100%;
+  max-width: 800px;
+}
+
+.business-card {
+  /* LAYOUT */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 384px;
+  
+  /* SPACING */
+  padding: 2rem;
+  
+  /* COLORS */
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  /* EFFECTS */
+  backdrop-filter: blur(16px);
+  border-radius: 1rem;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.business-card:hover {
+  /* COLORS */
+  background: rgba(255, 255, 255, 0.92);
+  
+  /* EFFECTS */
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.business-card:active {
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* ===================
+   CARD CONTENT
+   =================== */
+
+.card-logo-container {
+  /* LAYOUT */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+  /* SPACING */
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  
+  /* COLORS */
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  
+  /* EFFECTS */
+  border-radius: 0.75rem;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.card-logo {
+  /* LAYOUT */
+  max-height: 96px;
+  width: auto;
+  object-fit: contain;
+  
+  /* EFFECTS */
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.card-title {
+  /* SPACING */
+  margin-bottom: 0.75rem;
+  
+  /* COLORS */
+  color: #1e293b;
+  
+  /* TYPOGRAPHY */
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.card-description {
+  /* COLORS */
+  color: #475569;
+  
+  /* TYPOGRAPHY */
+  font-size: 0.875rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ===================
+   FOOTER STYLES
+   =================== */
+
+footer {
+  /* LAYOUT */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* SPACING */
+  padding: 1.5rem;
+  
+  /* COLORS */
+  background: rgba(241, 245, 249, 0.85);
+  color: #475569;
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+  
+  /* TYPOGRAPHY */
+  font-size: 0.875rem;
+  text-align: center;
+  
+  /* EFFECTS */
+  backdrop-filter: blur(16px);
+}
+
+/* ===================
+   RESPONSIVE DESIGN
+   =================== */
+
+@media (max-width: 768px) {
+  header {
+    padding: 1.5rem 1rem;
+  }
+  
+  header img {
+    max-width: 280px;
+  }
+  
+  main {
+    padding: 2rem 1rem;
+  }
+  
+  .business-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .business-card {
+    max-width: 100%;
+  }
+  
+  .welcome-title {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header img {
+    max-width: 240px;
+  }
+  
+  .business-card {
+    padding: 1.5rem;
+  }
+  
+  .card-logo-container {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card-logo {
+    max-height: 72px;
+  }
+}
+
+/* ===================
+   ANIMATIONS & MICRO-INTERACTIONS
+   =================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+/* Stagger animation for cards */
+.business-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.business-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+/* ===================
+   ACCESSIBILITY & FOCUS STATES
+   =================== */
+
+.business-card:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  body::before {
+    animation: none;
+  }
+}

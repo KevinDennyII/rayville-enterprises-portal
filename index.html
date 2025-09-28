@@ -1,100 +1,47 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ray-ville Enterprises Portal</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      // tailwind.config = {
-      //   darkMode: 'class'
-      // }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        margin: 0;
-        font-family: Arial, sans-serif;
-        color: #333;
-        background-image: url('/images/monument_east_baltimore_maryland.jpg');
-        background-size: 100vw 100vh;
-        background-repeat: no-repeat;
-      }
-      header {
-        /*background-color: rgba(255, 255, 255, 0.32);*/
-        padding: 1rem;
-        text-align: center;
-        color: #002855; /* Dark blue text */
-      }
-      header img {
-        max-width: 350px;
-        margin-bottom: 0.5rem;
-        display: inline;
-      }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
   </head>
-  <body class="text-gray-800 dark:text-gray-100">
-    <!-- Dark Mode Toggle -->
-<!--    <button onclick="document.documentElement.classList.toggle('dark')" class="fixed top-4 right-4 bg-blue-600 text-white px-4 py-2 rounded-md shadow hover:bg-blue-700 transition z-50">-->
-<!--      Toggle Dark Mode-->
-<!--    </button>-->
+  <body>
+    <!-- Header -->
+    <header>
+      <img src="images/logos/_Rayville_Enterprises.png" alt="Rayville Enterprises Logo" />
+    </header>
 
-    <!-- Overlay for contrast -->
-    <div >
-      <!-- Header -->
-      <header>
-        <img src="images/logos/_Rayville_Enterprises.png"  alt="Rayville Enterprises Logo" />
-      </header>
-
-      <!-- Main Content -->
-      <main class="max-w-7xl mx-auto px-4 pt-8 pb-16 text-center">
-        <h2 class="text-3xl font-semibold mb-4">Welcome to the Ray-ville Portal</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-8 place-items-center">
-          <!-- Card 1 -->
-          <div class="w-96 block bg-indigo-50/80 backdrop-blur-md rounded-xl shadow hover:shadow-xl hover:scale-105 hover:bg-blue-100/50 dark:hover:bg-neutral-50/90 transition-all duration-300 p-6 text-center">
-            <div class="icon flex justify-center items-center bg-white/75 rounded-lg p-2 border border-gray-300">
-              <a href="https://www.rayvillepm.com/" target="_blank">
-                <img src="/images/logos/RayvillePM-Logo_FullColor-01.png" alt="Ray-ville Property Management" class="max-h-24 object-contain border border-gray-200 rounded"/>
-              </a>
-            </div>
-            <h3 class="text-lg font-semibold mb-2 dark:text-slate-900">Ray-ville Property Management, LLC</h3>
-            <p class="text-sm text-gray-600 dark:text-slate-900">Property Management, Rental property search</p>
+    <!-- Main Content -->
+    <main>
+      <h1 class="welcome-title animate-fade-in">Welcome to the Ray-ville Portal</h1>
+      
+      <div class="business-cards">
+        <!-- Card 1: Property Management -->
+        <a href="https://www.rayvillepm.com/" target="_blank" class="business-card animate-fade-in" rel="noopener noreferrer">
+          <div class="card-logo-container">
+            <img src="images/logos/RayvillePM-Logo_FullColor-01.png" alt="Ray-ville Property Management" class="card-logo" />
           </div>
+          <h2 class="card-title">Ray-ville Property Management, LLC</h2>
+          <p class="card-description">Property Management, Rental property search</p>
+        </a>
 
-          <!-- Card 2 -->
-          <div class="mr-2 w-96 block bg-indigo-50/80 backdrop-blur-md rounded-xl shadow hover:shadow-xl hover:scale-105 hover:bg-blue-100/50 dark:hover:bg-neutral-50/90 transition-all duration-300 p-6 text-center">
-            <div class="icon flex justify-center items-center bg-white/75 rounded-lg p-2 border border-gray-300">
-              <img src="/images/logos/_Rayville_Real_Home_Lead_Inspections.png" alt="Ray-ville: A Real Home & Lead Inspections, Co." class="max-h-24 object-contain border border-gray-200 rounded"/>
-            </div>
-            <h3 class="text-lg font-semibold mb-2 dark:text-slate-900">A Real Home & Lead Inspection Co</h3>
-            <p class="text-sm text-gray-600 dark:text-slate-900">View and schedule services</p>
+        <!-- Card 2: Home & Lead Inspections -->
+        <div class="business-card animate-fade-in">
+          <div class="card-logo-container">
+            <img src="images/logos/_Rayville_Real_Home_Lead_Inspections.png" alt="A Real Home & Lead Inspections, Co." class="card-logo" />
           </div>
+          <h2 class="card-title">A Real Home & Lead Inspection Co</h2>
+          <p class="card-description">View and schedule services</p>
         </div>
-      </main>
+      </div>
+    </main>
 
-      <!-- Footer -->
-      <footer class="bg-gray-100/80 text-sm text-gray-900 dark:text-slate-900 py-6 text-center">
-        <p>© 2025 Rayville Enterprises. All rights reserved.</p>
-      </footer>
-    </div>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Rayville Enterprises. All rights reserved.</p>
+    </footer>
 
-    <style>
-      @keyframes fade-in {
-        from {
-          opacity: 0;
-          transform: translateY(-10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .animate-fade-in {
-        animation: fade-in 0.6s ease-out both;
-      }
-    </style>
   </body>
 </html>
