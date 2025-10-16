@@ -28,7 +28,7 @@
             <img src="images/logos/RayvillePM-Logo_FullColor-01.png" alt="Ray-ville Property Management" class="card-logo" />
           </div>
 <!--          <h2 class="card-title">Ray-ville Property Management, LLC</h2>-->
-          <p class="card-description">Property Management, Rental property search</p>
+          <p class="card-description">Property Management, Rental Property Search</p>
         </a>
 
         <!-- Card 2: Home & Lead Inspections -->
@@ -38,7 +38,7 @@
             <img src="images/logos/_Rayville_Real_Home_Lead_Inspections.png" alt="A Real Home & Lead Inspections, Co." class="card-logo" />
           </div>
 <!--          <h2 class="card-title">A Real Home & Lead Inspection Co</h2>-->
-          <p class="card-description">View and schedule services</p>
+          <p class="card-description">View and Schedule Services</p>
         </div>
       </div>
     </main>
@@ -56,15 +56,15 @@
       document.addEventListener('DOMContentLoaded', function() {
         const welcomeText = document.getElementById('welcome-text');
         const text = welcomeText.textContent;
-        
+
         // Split text into individual characters
-        welcomeText.innerHTML = text.split('').map(char => 
+        welcomeText.innerHTML = text.split('').map(char =>
           char === ' ' ? '<span class="char char-space"> </span>' : `<span class="char">${char}</span>`
         ).join('');
-        
+
         // Check if user prefers reduced motion
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        
+
         if (prefersReducedMotion) {
           // If user prefers reduced motion, show text immediately without animation
           const chars = document.querySelectorAll('.char');
@@ -72,7 +72,7 @@
             char.style.opacity = '1';
             char.style.transform = 'none';
           });
-          
+
           // Still add hover effects but without animation
           welcomeText.addEventListener('mouseenter', function() {
             chars.forEach(char => {
@@ -80,7 +80,7 @@
               char.style.transform = 'scale(1.05)';
             });
           });
-          
+
           welcomeText.addEventListener('mouseleave', function() {
             chars.forEach(char => {
               char.style.textShadow = '0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9)';
@@ -109,7 +109,7 @@
                   easing: 'easeOutQuad'
                 });
               });
-              
+
               welcomeText.addEventListener('mouseleave', function() {
                 anime({
                   targets: '.char',
