@@ -1,122 +1,178 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Ray-ville Enterprises Portal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
   </head>
   <body>
     <!-- Header -->
     <header>
-      <img src="images/logos/_Rayville_Enterprises.png" alt="Rayville Enterprises Logo" />
+      <img
+        src="images/logos/_Rayville_Enterprises.png"
+        alt="Rayville Enterprises Logo"
+      />
     </header>
 
     <!-- Main Content -->
     <main>
-      <h1 class="welcome-title animate-fade-in" id="welcome-text">Welcome to Ray-ville</h1>
+      <h1 class="welcome-title animate-fade-in" id="welcome-text">
+        Welcome to Ray-ville
+      </h1>
       <div class="tagline-container animate-fade-in">
-        <p class="tagline">Your one stop for inspections, repairs, and peace of mind. <br>Let us be the asset behind your assets.</p>
+        <p class="tagline">
+          Your one stop for inspections, repairs, and peace of mind.
+          <br />Let us be the asset behind your assets.
+        </p>
       </div>
 
       <div class="business-cards">
         <!-- Card 1: Property Management -->
-        <a href="https://www.rayvillepm.com/" target="_blank" class="business-card animate-fade-in" rel="noopener noreferrer">
+        <a
+          href="https://www.rayvillepm.com/"
+          target="_blank"
+          class="business-card animate-fade-in"
+          rel="noopener noreferrer"
+        >
           <div class="card-logo-container">
-            <img src="images/logos/RayvillePM-Logo_FullColor-01.png" alt="Ray-ville Property Management" class="card-logo" />
+            <img
+              src="images/logos/RayvillePM-Logo_FullColor-01.png"
+              alt="Ray-ville Property Management"
+              class="card-logo"
+            />
           </div>
-          <p class="card-description">Property Management, Rental Property Search</p>
+          <p class="card-description">
+            Property Management, Rental Property Search
+          </p>
         </a>
 
         <!-- Card 2: Home & Lead Inspections -->
-        <a href="https://www.realhomeandlead.com/" target="_blank" class="business-card animate-fade-in" rel="noopener noreferrer">
+        <a
+          href="https://www.realhomeandlead.com/"
+          target="_blank"
+          class="business-card animate-fade-in"
+          rel="noopener noreferrer"
+        >
           <div class="card-logo-container">
-            <img src="images/logos/_Rayville_Real_Home_Lead_Inspections.png" alt="A Real Home & Lead Inspections, Co." class="card-logo" />
+            <img
+              src="images/logos/_Rayville_Real_Home_Lead_Inspections.png"
+              alt="A Real Home & Lead Inspections, Co."
+              class="card-logo"
+            />
           </div>
           <p class="card-description">View and Schedule Services</p>
-          </a>
+        </a>
       </div>
     </main>
 
     <!-- Footer -->
     <footer>
       <div class="footer-content">
-        <p class="made-by">Made by <a href="https://www.ohhdennyservices.com" target="_blank" rel="noopener noreferrer">OhhDenny Services, LLC</a> with ❤️</p>
-        <p class="copyright">&copy; 2025 Rayville Enterprises. All rights reserved.</p>
+        <p class="made-by">
+          Made by
+          <a
+            href="https://www.ohhdennyservices.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >OhhDenny Services, LLC</a
+          >
+          with ❤️
+        </p>
+        <p class="copyright">
+          &copy; 2026 Rayville Enterprises. All rights reserved.
+        </p>
       </div>
     </footer>
 
     <script>
       // Wait for DOM to load
-      document.addEventListener('DOMContentLoaded', function() {
-        const welcomeText = document.getElementById('welcome-text');
+      document.addEventListener("DOMContentLoaded", function () {
+        const welcomeText = document.getElementById("welcome-text");
         const text = welcomeText.textContent;
 
         // Split text into individual characters
-        welcomeText.innerHTML = text.split('').map(char =>
-          char === ' ' ? '<span class="char char-space"> </span>' : `<span class="char">${char}</span>`
-        ).join('');
+        welcomeText.innerHTML = text
+          .split("")
+          .map((char) =>
+            char === " "
+              ? '<span class="char char-space"> </span>'
+              : `<span class="char">${char}</span>`,
+          )
+          .join("");
 
         // Check if user prefers reduced motion
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const prefersReducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
 
         if (prefersReducedMotion) {
           // If user prefers reduced motion, show text immediately without animation
-          const chars = document.querySelectorAll('.char');
-          chars.forEach(char => {
-            char.style.opacity = '1';
-            char.style.transform = 'none';
+          const chars = document.querySelectorAll(".char");
+          chars.forEach((char) => {
+            char.style.opacity = "1";
+            char.style.transform = "none";
           });
 
           // Still add hover effects but without animation
-          welcomeText.addEventListener('mouseenter', function() {
-            chars.forEach(char => {
-              char.style.textShadow = '0 0 20px rgba(255, 255, 255, 0.8), 0 2px 8px rgba(0, 0, 0, 0.8)';
-              char.style.transform = 'scale(1.05)';
+          welcomeText.addEventListener("mouseenter", function () {
+            chars.forEach((char) => {
+              char.style.textShadow =
+                "0 0 20px rgba(255, 255, 255, 0.8), 0 2px 8px rgba(0, 0, 0, 0.8)";
+              char.style.transform = "scale(1.05)";
             });
           });
 
-          welcomeText.addEventListener('mouseleave', function() {
-            chars.forEach(char => {
-              char.style.textShadow = '0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9)';
-              char.style.transform = 'scale(1)';
+          welcomeText.addEventListener("mouseleave", function () {
+            chars.forEach((char) => {
+              char.style.textShadow =
+                "0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9)";
+              char.style.transform = "scale(1)";
             });
           });
         } else {
           // Animate each character with a subtle highlight effect
           anime({
-            targets: '.char',
+            targets: ".char",
             translateY: [20, 0],
             opacity: [0, 1],
             rotateX: [-90, 0],
             scale: [0.8, 1],
-            easing: 'easeOutElastic(1, .8)',
+            easing: "easeOutElastic(1, .8)",
             duration: 1200,
-            delay: anime.stagger(60, {start: 300}),
-            complete: function() {
+            delay: anime.stagger(60, { start: 300 }),
+            complete: function () {
               // Add a subtle glow effect on hover
-              welcomeText.addEventListener('mouseenter', function() {
+              welcomeText.addEventListener("mouseenter", function () {
                 anime({
-                  targets: '.char',
-                  textShadow: '0 0 20px rgba(255, 255, 255, 0.8), 0 2px 8px rgba(0, 0, 0, 0.8)',
+                  targets: ".char",
+                  textShadow:
+                    "0 0 20px rgba(255, 255, 255, 0.8), 0 2px 8px rgba(0, 0, 0, 0.8)",
                   scale: 1.05,
                   duration: 400,
-                  easing: 'easeOutQuad'
+                  easing: "easeOutQuad",
                 });
               });
 
-              welcomeText.addEventListener('mouseleave', function() {
+              welcomeText.addEventListener("mouseleave", function () {
                 anime({
-                  targets: '.char',
-                  textShadow: '0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9)',
+                  targets: ".char",
+                  textShadow:
+                    "0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9)",
                   scale: 1,
                   duration: 400,
-                  easing: 'easeOutQuad'
+                  easing: "easeOutQuad",
                 });
               });
-            }
+            },
           });
         }
       });
